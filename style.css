@@ -2,16 +2,14 @@
 
 body {
     background: #7D5443;
-    background-image: url("../bioSite/images/Bookshelf\ Header\ Banner.jpg");
+    background-image: url("../bioSite/images/BookshelfHeaderBanner.jpg");
     margin: 0;
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 56px;
     color: #ECE1DC;
-    margin: 0;
 }
 
 h2 {
@@ -21,46 +19,53 @@ h2 {
     color: #ECE1DC;
 }
 
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: #ECE1DC;
+}
+
 p {
     font-family: 'Playfair Display', serif;
     font-weight: 500;
     color: #ECE1DC;
 }
 
-.navbar-container, .navbar-container-right {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+#header {
     background-color: #724436;
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    font-size: 45px;
-    color: #ECE1DC;
-}
-
-.navbar-container {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
 }
 
-.navbar-container-left {
-    float: left;
-    padding: 10px 0 10px 50px;
-}
-
-.navbar-container-right {
+#navbar {
+    list-style-type: none;
+    margin: 0 20px 0 0;
+    padding: 10px 0;
+    background-color: #724436;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: #ECE1DC;
     float: right;
-    padding: 10px 25px 10px 0;
 }
 
-.navbar-container-right li {
+.header-text {
+    float: left;
+    margin: 0 0 0 20px;
+    padding: 10px 0;
+    font-size: 48px;
+}
+
+#navbar li {
     display: inline;
+    font-size: 40px;
 }
 
 a:link, a:visited {
-    color: #80A0AF;
+    color: #B4C9D0;
 }
 
 a:hover, a.active {
@@ -68,7 +73,7 @@ a:hover, a.active {
     text-decoration: none;
 }
 
-.header-banner-container {
+.text-banner-container {
     position: relative;
     margin-top: 80px;
     width: 100vm;
@@ -77,15 +82,7 @@ a:hover, a.active {
     color: #ECE1DC;
 }
 
-.header-banner-background {
-    
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -40%);
-}
-
-.header-banner-text {
+.text-banner {
     font-family: 'Playfair Display', serif;
     font-size: 72px;
     font-weight: 900;
@@ -95,23 +92,23 @@ a:hover, a.active {
         -1px 1px 0 #000, 
         1px 1px 0 #000;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -50%);
 }
 
-.image-display-table {
-    border: 0;
-    width: 90vw;
-    margin: 10px auto 40px;
-    padding: 20px 0;
+#landing-image-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
     background: #724436;
+    width: 90%;
+    margin: 0 auto 50px;
 }
 
-.image-display-table td {
-    width: 33%;
+.image-item {
+    width: 100%;
     text-align: center;
-    padding-bottom: 20px;
 }
 
 .image {
@@ -119,10 +116,12 @@ a:hover, a.active {
     width: 70%;
 }
 
-.image-caption {
+figcaption {
     width: 70%;
-    margin: 0 auto 0;
     font-size: 24px;
+    margin: 0 auto;
+    text-align: center;
+    color: #ECE1DC;
 }
 
 .about-bodytext-container {
@@ -133,7 +132,7 @@ a:hover, a.active {
 }
 
 .headshot-image {
-    height: 420px;
+    width: 315px;
     float: left;
     margin: 0 20px 10px 0;
 }
@@ -171,5 +170,63 @@ a:hover, a.active {
     margin: 10px 10px 0 0;
 }
 
+@media screen and (max-width: 950px){
+    .headshot-image {
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+}
 
+@media screen and (max-width: 710px){
+    .header-text {
+        font-size: 20px;
+    }
+
+    #navbar, #navbar li {
+        font-size: 20px;
+    }
+
+    .text-banner-container {
+        min-height: 300px;
+        margin-top: 50px;
+    }
+    
+    .text-banner {
+        font-size: 48px;
+    }
+
+    #landing-image-container {
+        display: grid;
+        grid-template-columns: auto;
+        background: #724436;
+        width: 90%;
+        margin: 0 auto 20px;
+    }
+    
+    .image-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .image {
+        object-fit: fill;
+        width: 100%;
+    }
+    
+    figcaption {
+        width: 70%;
+        font-size: 24px;
+        margin: 0 auto;
+        text-align: center;
+        color: #ECE1DC;
+    }
+
+    .headshot-image {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: block;
+    }
+}
 
